@@ -10,3 +10,6 @@ backend/.env
 
 # Generated plan/spec HTML (created by local hook)
 docs/superpowers/**/*.html
+
+# SDD progress ledger (scratch)
+.superpowers/
