@@ -1,0 +1,12 @@
+# Python / uv
+__pycache__/
+*.pyc
+.venv/
+backend/.venv/
+
+# Secrets / local env
+.env
+backend/.env
+
+# Generated plan/spec HTML (created by local hook)
+docs/superpowers/**/*.html
