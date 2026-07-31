@@ -15,9 +15,9 @@
  *
  * Configure via ~/.pi/agent/rich-status-line.json:
  * {
- *   "projectName": "promedico-web",
- *   "ticket": "PM-18165",
- *   "service": "pserver_servicos",
+ *   "projectName": "my-web-app",
+ *   "ticket": "TICKET-123",
+ *   "service": "my-service",
  *   "environment": "k8s-prod",
  *   "environmentColor": "purple",
  *   "tmuxPeers": ["agent-2"]
