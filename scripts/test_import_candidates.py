@@ -14,9 +14,9 @@ spec.loader.exec_module(cpa)
 
 
 def test_match_unico(tmp_path):
-    (tmp_path / "promedico-web").mkdir()
-    local, matched = cpa._match_local("/home/outro/promedico-web", [str(tmp_path)])
-    assert matched and local == str(tmp_path / "promedico-web")
+    (tmp_path / "app-web").mkdir()
+    local, matched = cpa._match_local("/home/outro/app-web", [str(tmp_path)])
+    assert matched and local == str(tmp_path / "app-web")
 
 
 def test_match_ausente(tmp_path):

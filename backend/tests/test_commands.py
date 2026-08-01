@@ -100,7 +100,7 @@ def test_scan_installed_plugins(monkeypatch, tmp_path):
     monkeypatch.setenv("HOME", str(home))
 
     # installPath de um plugin instalado, com um comando e uma skill
-    install = tmp_path / "cache" / "pmedico" / "1.0"
+    install = tmp_path / "cache" / "acme" / "1.0"
     (install / "commands").mkdir(parents=True)
     (install / "commands" / "iniciar-pm.md").write_text(
         "---\ndescription: Abre a PM\nargument-hint: <chave>\n---\n\ncorpo\n",
@@ -118,7 +118,7 @@ def test_scan_installed_plugins(monkeypatch, tmp_path):
         json.dumps({
             "version": 2,
             "plugins": {
-                "pmedico@pmedico-marketplace": [
+                "acme@acme-marketplace": [
                     {"scope": "user", "installPath": str(install)}
                 ]
             },
@@ -127,11 +127,11 @@ def test_scan_installed_plugins(monkeypatch, tmp_path):
     )
 
     by = _by_name(list_commands(None))
-    assert by["pmedico:iniciar-pm"].source == "plugin"
-    assert by["pmedico:iniciar-pm"].display == "/pmedico:iniciar-pm"
-    assert by["pmedico:iniciar-pm"].argumentHint == "<chave>"
-    assert by["pmedico:kubectl"].source == "plugin"
-    assert by["pmedico:kubectl"].description == "Opera k8s"
+    assert by["acme:iniciar-pm"].source == "plugin"
+    assert by["acme:iniciar-pm"].display == "/acme:iniciar-pm"
+    assert by["acme:iniciar-pm"].argumentHint == "<chave>"
+    assert by["acme:kubectl"].source == "plugin"
+    assert by["acme:kubectl"].description == "Opera k8s"
 
 
 def test_missing_dirs_skip(monkeypatch, tmp_path):
